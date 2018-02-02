@@ -1,5 +1,4 @@
 # mRUBiS-EJB3
-
 _mRUBiS-EJB3_ is a real prototype of _mRUBiS_ implemented for the EJB application server GlassFish. In contrast, the [_mRUBiS exemplar simulates mRUBiS_](https://github.com/thomas-vogel/mRUBiS) to provide a light-weight environment for experiments with self-adaptation solutions.
 
 The _mRUBiS-EJB3_ is configured to run one shop (one-tenant system), however, it can be extended to a multi-tenant setting with multiple shops since each module (component) can be deployed multiple times. In this case, the configuration must be adjusted to that two deployed modules have different names (so-called mapped names of components used for and by the naming service of the application server).  
@@ -9,7 +8,10 @@ _mRUBiS-EJB3_ has been developed with Enterprise Java Beans 3 (EJB 3.0) technolo
 
 GlassFish v2.1.1 requires Java 6. Hence, a Java 6 distribution must be used to run GlassFish and _mRUBiS-EJB3_. Therefore, the system property JAVA_HOME must be set to a Java 6 distribution. This is checked by the ant script delivered with this project.
 
-Instructions for building, deploying, and running  are given below. Moreover, mRUBiS-EJB3 is also available as a [Docker image](https://github.com/jfloff/docker-mrubis) created by @jfloff.
+Instructions for building, deploying, and running  are given below. Moreover, mRUBiS-EJB3 is also available as a [Docker image](https://github.com/jfloff/docker-mrubis) created by @jfloff, however, without the pipe of filter components.
+
+## Status
+Currently, _mRUBiS-EJB3_ is not actively maintained. Changes might be made upon requests. 
 
 ## Building, Deploying, and Running mRUBiS-EJB3
 
