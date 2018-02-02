@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd">
+	<enterprise-beans>
+		<session>
+			<ejb-name>PastSalesItemFilterBean</ejb-name>
+			<ejb-class>de.hpi.sam.rubis.filter.impl.PastSalesItemFilterBean</ejb-class>
+			<env-entry>
+				<description>Positive and negative threshold to alert of changes of the filter selection rate.</description>
+				<env-entry-name>selectionRateThreshold</env-entry-name>
+				<env-entry-type>java.lang.Double</env-entry-type>
+				<env-entry-value>0.05</env-entry-value>
+			</env-entry>
+			<env-entry>
+				<description>Positive and negative threshold to alert of changes of the filter computation time.</description>
+				<env-entry-name>computationTimeThreshold</env-entry-name>
+				<env-entry-type>java.lang.Double</env-entry-type>
+				<env-entry-value>0.05</env-entry-value>
+			</env-entry>
+			<env-entry>
+				<description>CPU time (in the sense of load) imposed on the filter bean in ms.</description>
+				<env-entry-name>cpuTime</env-entry-name>
+				<env-entry-type>java.lang.Long</env-entry-type>
+				<env-entry-value>0</env-entry-value>
+			</env-entry>
+		</session>
+	</enterprise-beans>
+</ejb-jar>

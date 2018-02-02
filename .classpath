@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="contracts/src"/>
+	<classpathentry kind="src" path="businessobjects/src"/>
+	<classpathentry kind="src" path="entities/src"/>
+	<classpathentry kind="src" path="usermgmt/src"/>
+	<classpathentry kind="src" path="itemmgmt/src"/>
+	<classpathentry kind="src" path="authservice/src"/>
+	<classpathentry kind="src" path="bidandbuyservice/src"/>
+	<classpathentry kind="src" path="inventorymgmt/src"/>
+	<classpathentry kind="src" path="reputationservice/src"/>
+	<classpathentry kind="src" path="persistenceservice/src"/>
+	<classpathentry kind="src" path="queryservice/src"/>
+	<classpathentry kind="src" path="lastsecondsalesitemfilter/src"/>
+	<classpathentry kind="src" path="pastsalesitemfilter/src"/>
+	<classpathentry kind="src" path="buynowitemfilter/src"/>
+	<classpathentry kind="src" path="availabilityitemfilter/src"/>
+	<classpathentry kind="src" path="regionitemfilter/src"/>
+	<classpathentry kind="src" path="sellerreputationitemfilter/src"/>
+	<classpathentry kind="src" path="commentitemfilter/src"/>
+	<classpathentry kind="src" path="categoryitemfilter/src"/>
+	<classpathentry kind="src" path="recommendationitemfilter/src"/>
+	<classpathentry kind="src" path="futuresalesitemfilter/src"/>
+	<classpathentry kind="src" path="client/src"/>
+	<classpathentry kind="lib" path="/home/tom/server/glassfish/lib/javaee.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://download.oracle.com/javaee/5/api/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/tom/server/glassfish/lib/appserv-rt.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

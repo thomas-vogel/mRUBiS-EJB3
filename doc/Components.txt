@@ -1,0 +1,284 @@
+
+%%%%%%%%%%%%%%%%%%%%%
+Components of mRUBiS:
+%%%%%%%%%%%%%%%%%%%%%
+
+ (1) User Management Service
+ (2) Item Management Service
+ (3) Authentication Service
+ (4) Bid and Buy Service
+ (5) Inventory Service
+ (6) Reputation Service
+ (7) Persistence Service
+ (8) Query Service
+ (9) Last Second Sales Item Filter
+(10) Past Sales Item Filter
+(11) Buy-Now Item Filter
+(12) Availability Item Filter
+(13) Region Item Filter
+(14) Seller Reputation Item Filter
+(15) Comment Item Filter
+(16) Category Item Filter
+(17) Recommendation Item Filter
+(18) Future Sales Item Filter
+
+===============================================================================
+
+-------------------------------------------------------------------------------
+(1) User Management Service
+===========================
+
+Service for registering and browsing users.
+
+PROVIDES:
+	* AboutMeService: Service to retrieve information about the currently 
+		logged in user.
+	* BrowseRegionsService: Service for browsing the regions to which users
+		belong.
+	* UserRegistrationService: Service for registering a new user.
+	* ViewUserInfoService: Retrieves information about any user to be presented
+		to the user who is currently logged in.
+
+REQUIRES:
+	* Authentication Service (AuthenticationService)
+	* Query Service (QueryService, BasicQueryService)
+	* Persistence Service (BusinessObjectsPersistenceService)
+
+
+-------------------------------------------------------------------------------
+(2) Item Management Service
+===========================
+
+Service for registering and browsing items.
+
+PROVIDES:
+	* BrowseCategoriesService: Service for browsing categories and items.
+	* ItemRegistrationService: Service for registering new items.
+
+REQUIRES:
+	* Authentication Service (AuthenticationService)
+	* Query Service (QueryService, BasicQueryService)
+	* Persistence Service (BusinessObjectsPersistenceService)
+
+
+-------------------------------------------------------------------------------
+(3) Authentication Service
+==========================
+
+Service for authenticating a user.
+
+PROVIDES:
+	* AuthenticationService: Service for authenticating a user.
+
+REQUIRES:
+	* Query Service (BasicQueryService)
+
+
+-------------------------------------------------------------------------------
+(4) Bid and Buy Service
+=======================
+
+Service for bidding and buying items.
+
+PROVIDES:
+	* BidService: Service for bidding on items.
+	* BuyNowService: Service to buy-now items.
+
+REQUIRES:
+	* Authentication Service (AuthenticationService)
+	* Query Service (QueryService, BasicQueryService)
+	* Persistence Service (BusinessObjectsPersistenceService)
+	* Inventory Service (InventoryService)
+
+
+-------------------------------------------------------------------------------
+(5) Inventory Service
+=====================
+
+Service for managing the inventory.
+
+PROVIDES:
+	* InventoryService: Service for managing the inventory.
+
+REQUIRES:
+	* Query Service (QueryService)
+	* Persistence Service (BusinessObjectsPersistenceService)
+
+
+-------------------------------------------------------------------------------
+(6) Reputation Service
+======================
+
+Service for the user reputation system.
+
+PROVIDES:
+	* ReputationService: Service for the user reputation system.
+
+REQUIRES:
+	* Authentication Service (AuthenticationService)
+	* Query Service (QueryService, BasicQueryService)
+	* Persistence Service (BusinessObjectsPersistenceService)
+
+
+-------------------------------------------------------------------------------
+(7) Persistence Service
+=======================
+
+Service for persisting business objects.
+
+PROVIDES:
+	* BusinessObjectsPersistenceService: Service for persisting business 
+		objects.
+
+REQUIRES:
+	* N/A
+
+
+-------------------------------------------------------------------------------
+(8) Query Service
+=================
+
+Service for querying the database.
+
+PROVIDES:
+	* BasicQueryService: Service to retrieve basic information from the 
+		database.
+	* QueryService: Service to retrieve advanced information from the 
+		database.
+
+REQUIRES:
+	* Last Second Sales Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(9) Last Second Sales Item Filter
+=================================
+
+Filters items of sales that finish very soon, actually too soon to make a bid.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* Past Sales Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(10) Past Sales Item Filter
+===========================
+
+Filters items of sales that have already closed.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* Buy-Now Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(11) Buy-Now Item Filter
+========================
+
+Filters items that are only sold by buy-nows.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* Availability Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(12) Availability Item Filter
+=============================
+
+Filters items that are not available.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* Region Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(13) Region Item Filter
+=============================
+
+Filters items that are sold on a different continent than the buyer lives.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* Seller Reputation Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(14) Seller Reputation Item Filter
+==================================
+
+Filters items based on the reputation of the seller.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* Comment Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(15) Comment Item Filter
+========================
+
+Filters items based on user comments (incl. rating) for individual items.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* Category Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(16) Category Item Filter
+==========================
+
+Filters items of certain categories.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* Recommendation Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(17) Recommendation Item Filter
+===============================
+
+Filters item that are not recommended to the buying user.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* Future Sales Item Filter (ItemFilter)
+
+
+-------------------------------------------------------------------------------
+(18) Future Sales Item Filter
+=============================
+
+Filters item that will be sold for more than a given number of days.
+
+PROVIDES:
+	* ItemFilter
+
+REQUIRES:
+	* N/A
+
+===============================================================================
+
+
